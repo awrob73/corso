@@ -8,12 +8,18 @@ import entity.Quiz;
 
 public interface QuizServiceInterface {
 	
-	public void registraQuiz(Quiz q);
-	public List<Quiz> selectAll();
-	public List<Quiz> selectQuizAllievo(Allievo a);
-	public Quiz select(int id);
-	public List<Quiz> selectQuizArgomento(String argomento);
-	public void update(Quiz q);
-	public void delete(Quiz q);
+	public void registraQuiz(Quiz q) throws Exception;
+	
+	public List<Quiz> selectAll() throws Exception;
+	
+	public List<Quiz> selectQuizAllievo(Allievo a) throws Exception;
+	
+	public Quiz selectQuiz(int id) throws Exception;
+	
+	public List<Quiz> selectQuizArgomento(String argomento) throws Exception;
+	
+	public void updateQuiz(Quiz q) throws Exception;
+	
+	public void deleteQuiz(Quiz q) throws Exception;
 
 }
