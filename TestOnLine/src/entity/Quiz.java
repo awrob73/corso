@@ -3,47 +3,42 @@ package entity;
 public class Quiz {
 
 	private int id;
-	private String argomento;
-	private String risposta;
-	private int numero_domande;
-	private String username;
+	
+	private int  id_argomento;
+	
+	private String difficolta;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getArgomento() {
-		return argomento;
+
+	public int getId_argomento() {
+		return id_argomento;
 	}
-	public void setArgomento(String argomento) {
-		this.argomento = argomento;
+
+	public void setId_argomento(int id_argomento) {
+		this.id_argomento = id_argomento;
 	}
-	public String getRisposta() {
-		return risposta;
+
+	public String getDifficolta() {
+		return difficolta;
 	}
-	public void setRisposta(String risposta) {
-		this.risposta = risposta;
+
+	public void setDifficolta(String difficolta) {
+		this.difficolta = difficolta;
 	}
-	public int getNumero_domande() {
-		return numero_domande;
-	}
-	public void setNumero_domande(int numero_domande) {
-		this.numero_domande = numero_domande;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
+
 	@Override
 	public String toString() {
-		return "Quiz [id=" + id + ", argomento=" + argomento + ", risposta=" + risposta + ", numero_domande="
-				+ numero_domande + ", username=" + username + "]";
+		return "Quiz [id=" + id + ", id_argomento=" + id_argomento + ", difficolta=" + difficolta + "]";
 	}
 	
+
+
 	
 	
 }
