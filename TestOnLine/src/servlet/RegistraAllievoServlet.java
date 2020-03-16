@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistraAllievoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-  
-
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
