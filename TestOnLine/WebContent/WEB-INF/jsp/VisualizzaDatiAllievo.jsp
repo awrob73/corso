@@ -25,9 +25,9 @@ email: <%= a.getEmail() %> <br>
 <input type='submit' value='modifica allievo'>
 </form>
 
-<form action="">
-
-
+<form action="cancellaAllievo">
+<input type='hidden' name='username' value=<%=a.getUsername()%>>
+<input type='submit' value='Elimina account'>
 </form>
 
 </body>

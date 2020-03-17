@@ -10,20 +10,22 @@
 <body>
 
 <%Allievo a = (Allievo)request.getAttribute("allievo"); %>
-
+ 
+PAGINA PRIVATA ALLIEVO
+<p>
+ 
 Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
 
 <form action="getAllievo">
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
 <input type="submit" value='Visualizza dati'>
-
 </form>
-
+<p>
 <form action="getQuiz">
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
 <input type="submit" value="Visualizza quiz">
 </form>
-
+<p>
 <form action="logout">
 <input type='hidden' name='username' value=<%=a.getUsername()%>>
 <input type='submit' value='Logout'>
