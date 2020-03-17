@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+ciao
 <%Allievo a = (Allievo)request.getAttribute("allievo"); %>
 
 Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
