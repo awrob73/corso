@@ -9,7 +9,7 @@ public class DomandaDAOImpl implements DomandaDAO {
 
 	@Override
 	public List<Domanda> select(Quiz q) throws Exception {
-		// TODO Auto-generated method stub
+		// valentina
 		return null;
 	}
 
