@@ -24,7 +24,7 @@ public class cancellaAllievoServlet extends HttpServlet {
 			
 			request.setAttribute("username", username);
 			
-			getServletContext().getRequestDispatcher("/WEB-INF/jsp/.%%%%%jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/homepage.html").forward(request, response);
 			
 		} catch (Exception e) {
 
