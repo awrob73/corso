@@ -12,7 +12,7 @@ import entity.Allievo;
 import service.AllievoServiceImpl;
 
 
-
+//Modifica
 
 @WebServlet("/regAllievo")
 public class RegistraAllievoServlet extends HttpServlet {
