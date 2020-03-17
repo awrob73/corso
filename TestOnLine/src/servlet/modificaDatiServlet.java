@@ -10,32 +10,28 @@ import javax.servlet.http.HttpServletResponse;
 import entity.Allievo;
 import service.AllievoServiceImpl;
 
-
-@WebServlet("/getAllievo")
-public class LeggiAllievoServlet extends HttpServlet {
+@WebServlet("/modificaDati")
+public class modificaDatiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		try {
-			
-			String username = request.getParameter("username");
+			String username= request.getParameter("username");
 			
 			AllievoServiceImpl asi = new AllievoServiceImpl();
 			Allievo a = asi.leggiDatiAllievo(username);
 			
 			request.setAttribute("allievo", a);
+			
 			getServletContext().
-			getRequestDispatcher("/WEB-INF/jsp/VisualizzaDatiAllievo.jsp").
+			getRequestDispatcher("/WEB-INF/jsp/formModificaDati.jsp").
 			forward(request, response);
+			
+			
 		} catch (Exception e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
-			getServletContext().
-			getRequestDispatcher("/WEB-INF/jsp/errore.jsp").
-			forward(request, response);
 		}
 		
 		

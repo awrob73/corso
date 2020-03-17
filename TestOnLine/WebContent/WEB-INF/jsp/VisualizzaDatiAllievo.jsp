@@ -20,5 +20,15 @@ nome: <%= a.getNome() %> <br>
 cognome: <%= a.getCognome() %> <br>
 email: <%= a.getEmail() %> <br>
 
+<form action="modificaDati">
+<input type='hidden' name='username' value=<%=a.getUsername()%>>
+<input type='submit' value='modifica allievo'>
+</form>
+
+<form action="">
+
+
+</form>
+
 </body>
 </html>
