@@ -6,7 +6,7 @@ import dao.AllievoDAOImpl;
 import dao.SingletonConnection;
 import entity.Allievo;
 
-
+   
 public class AllievoServiceImpl implements AllievoServiceInterface {
 	
 	private AllievoDAOImpl dao;
