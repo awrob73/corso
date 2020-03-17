@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 import entity.Allievo;
@@ -16,8 +17,28 @@ public class AllievoDAOImpl implements AllievoDAO {
 		}
 	@Override
 	public Allievo select(String username) throws Exception {
-		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM allievo WHERE username=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, username);
+
+	
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Allievo a = new Allievo();
+			a.setUsername(rs.getString("username"));
+			a.setNome(rs.getString("nome"));
+			a.setCognome(rs.getString("cognome"));
+			a.setEmail(rs.getString("email"));
+			a.setPassword(rs.getString("password"));
+			a.setStato(rs.getString("stato"));
+			return a;
+		
+		}
+
+		conn.commit();
 		return null;
+		
 	}
 
 	@Override
@@ -52,7 +73,7 @@ public class AllievoDAOImpl implements AllievoDAO {
 		String sql = "update allievo set nome = ?, cognome = ?, email=?, password=?, stato=? where username=?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
-		
+		System.out.println(a);
 		ps.setString(1, a.getNome());
 		ps.setString(2, a.getCognome());
 		ps.setString(3, a.getEmail());

@@ -1,9 +1,25 @@
 package service;
 
+import java.sql.Connection;
+
+import dao.AllievoDAOImpl;
+
+import dao.SingletonConnection;
 import entity.Allievo;
+
 
 public class AllievoServiceImpl implements AllievoServiceInterface {
 
+	
+	private AllievoDAOImpl dao;
+	private Connection conn;
+
+	public AllievoServiceImpl() throws Exception {
+
+		this.dao = new AllievoDAOImpl();
+		conn = SingletonConnection.getConnection();
+	}
+	
 	@Override
 	public void registraAllievo(Allievo a) throws Exception {
 		// TODO Auto-generated method stub
@@ -12,8 +28,11 @@ public class AllievoServiceImpl implements AllievoServiceInterface {
 
 	@Override
 	public Allievo leggiDatiAllievo(String username) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Allievo a = dao.select(username);
+		conn.commit();
+
+		return a;
 	}
 
 	@Override
@@ -48,8 +67,12 @@ public class AllievoServiceImpl implements AllievoServiceInterface {
 
 	@Override
 	public void modificaStato(Allievo a, String newStato) throws Exception {
-		// TODO Auto-generated method stub
-
+		System.out.println(a);
+		a.setStato(newStato);
+		dao.update(a);
+		conn.commit();
+		
 	}
+
 
 }

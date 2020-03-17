@@ -20,5 +20,6 @@ public interface AllievoServiceInterface {
 	
 	public void modificaStato(Allievo a, String newStato) throws Exception;
 	
+	
 
 }
