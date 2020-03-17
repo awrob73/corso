@@ -39,8 +39,6 @@ public class AllievoServiceImpl implements AllievoServiceInterface {
 	}
 
 	
-	
-	
 	@Override
 	public void cancellaAllievo(String username) throws Exception {
 		// TODO Auto-generated method stub
