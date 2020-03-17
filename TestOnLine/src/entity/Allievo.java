@@ -13,6 +13,8 @@ public class Allievo {
 	private String password;
 	
 	private String stato;
+	
+	//prova modifica
 
 	public String getUsername() {
 		return username;
