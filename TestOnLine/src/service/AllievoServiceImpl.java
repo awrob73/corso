@@ -41,32 +41,36 @@ public class AllievoServiceImpl implements AllievoServiceInterface {
 	
 	@Override
 	public void cancellaAllievo(String username) throws Exception {
-		// TODO Auto-generated method stub
-
+		dao.delete(username);
+		conn.commit();
 	}
 
 	@Override
 	public void modificaPassword(Allievo a, String newPass) throws Exception {
-		// TODO Auto-generated method stub
-
+		a.setPassword(newPass);
+		dao.update(a);
+		conn.commit();
 	}
 
 	@Override
 	public void modificaNome(Allievo a, String newNome) throws Exception {
-		// TODO Auto-generated method stub
-
+		a.setNome(newNome);
+		dao.update(a);
+		conn.commit();
 	}
 
 	@Override
 	public void modificaCognome(Allievo a, String newCognome) throws Exception {
-		// TODO Auto-generated method stub
-
+		a.setCognome(newCognome);
+		dao.update(a);
+		conn.commit();
 	}
 
 	@Override
 	public void modificaEmail(Allievo a, String newEmail) throws Exception {
-		// TODO Auto-generated method stub
-
+		a.setEmail(newEmail);
+		dao.update(a);
+		conn.commit();
 	}
 
 	@Override

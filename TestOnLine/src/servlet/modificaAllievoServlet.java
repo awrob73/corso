@@ -42,9 +42,20 @@ public class modificaAllievoServlet extends HttpServlet {
 			if(newEmail != null && newEmail!= a.getEmail()) {
 				asi.modificaEmail(a,newEmail);
 			}
+			
+			a=asi.leggiDatiAllievo(username);
+			request.setAttribute("allievo", a);
+			
+			getServletContext().
+			getRequestDispatcher("/WEB-INF/jsp/VisualizzaDatiAllievo.jsp").
+			forward(request, response);
+			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
+			getServletContext().
+			getRequestDispatcher("/WEB-INF/jsp/errore.jsp").
+			forward(request, response);
 		}
 	}
 
