@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entity.Domanda;
+import entity.Risposta;
+import service.DomandaServiceImpl;
+import service.RispostaServiceImpl;
+
 
 
 @WebServlet("/getRisposte")
@@ -28,7 +33,7 @@ public class getRisposteServlet extends HttpServlet {
 		
 		RispostaServiceImpl rsi = new RispostaServiceImpl();
 		
-		List<Risposta> lista = rsi.leggiRisposteDaDomanda(d);
+		List<Risposta> lista = rsi.stampaRiposteDomanda(d);
 		
 		request.setAttribute("risposte", lista);
 		request.setAttribute("domanda", id);
