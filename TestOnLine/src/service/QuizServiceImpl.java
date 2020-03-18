@@ -8,7 +8,7 @@ import entity.Domanda;
 import entity.Quiz;
 import entity.Risposta;
 
-public class QuziServiceImpl implements QuizServiceInterface {
+public class QuizServiceImpl implements QuizServiceInterface {
 
 	@Override
 	public void registraQuiz(Quiz q) throws Exception {
