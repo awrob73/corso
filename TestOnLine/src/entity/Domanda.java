@@ -4,7 +4,7 @@ public class Domanda {
 
 	private int id;
 	
-	private int id_quiz;
+	private Quiz quiz;
 	
 	private String quesito;
 
@@ -16,12 +16,12 @@ public class Domanda {
 		this.id = id;
 	}
 
-	public int getId_quiz() {
-		return id_quiz;
+	public Quiz getQuiz() {
+		return quiz;
 	}
 
-	public void setId_quiz(int id_quiz) {
-		this.id_quiz = id_quiz;
+	public void setQuiz(Quiz quiz) {
+		this.quiz = quiz;
 	}
 
 	public String getQuesito() {
@@ -34,9 +34,9 @@ public class Domanda {
 
 	@Override
 	public String toString() {
-		return "Domanda [id=" + id + ", id_quiz=" + id_quiz + ", quesito=" + quesito + "]";
+		return "Domanda [id=" + id + ", quiz=" + quiz + ", quesito=" + quesito + "]";
 	}
-	
+
 	
 	
 }

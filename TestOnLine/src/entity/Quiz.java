@@ -4,7 +4,7 @@ public class Quiz {
 
 	private int id;
 	
-	private int  id_argomento;
+	private Argomento argomento;
 	
 	private String difficolta;
 
@@ -16,12 +16,12 @@ public class Quiz {
 		this.id = id;
 	}
 
-	public int getId_argomento() {
-		return id_argomento;
+	public Argomento getArgomento() {
+		return argomento;
 	}
 
-	public void setId_argomento(int id_argomento) {
-		this.id_argomento = id_argomento;
+	public void setArgomento(Argomento argomento) {
+		this.argomento = argomento;
 	}
 
 	public String getDifficolta() {
@@ -34,8 +34,10 @@ public class Quiz {
 
 	@Override
 	public String toString() {
-		return "Quiz [id=" + id + ", id_argomento=" + id_argomento + ", difficolta=" + difficolta + "]";
+		return "Quiz [id=" + id + ", argomento=" + argomento + ", difficolta=" + difficolta + "]";
 	}
+
+	
 	
 
 

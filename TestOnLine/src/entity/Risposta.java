@@ -4,7 +4,7 @@ public class Risposta {
 
 	private int id;
 	
-	private int id_domanda;
+	private Domanda domanda;
 	
 	private String descrizione;
 	
@@ -18,12 +18,12 @@ public class Risposta {
 		this.id = id;
 	}
 
-	public int getId_domanda() {
-		return id_domanda;
+	public Domanda getDomanda() {
+		return domanda;
 	}
 
-	public void setId_domanda(int id_domanda) {
-		this.id_domanda = id_domanda;
+	public void setDomanda(Domanda domanda) {
+		this.domanda = domanda;
 	}
 
 	public String getDescrizione() {
@@ -44,9 +44,9 @@ public class Risposta {
 
 	@Override
 	public String toString() {
-		return "Risposta [id=" + id + ", id_domanda=" + id_domanda + ", descrizione=" + descrizione + ", valutazione="
+		return "Risposta [id=" + id + ", domanda=" + domanda + ", descrizione=" + descrizione + ", valutazione="
 				+ valutazione + "]";
 	}
-	
+
 	
 }
