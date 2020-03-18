@@ -10,6 +10,7 @@
 <body>
 
 <%Allievo a = (Allievo)request.getAttribute("allievo"); %>
+
  
 PAGINA QUIZ
 
@@ -23,7 +24,7 @@ Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
 </form>
 <p>
 <form action="getQuizId">
-<input type="text" name = "Id"> id quiz <br>
+<input type="text" name = "Id"> id quiz <br> 
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
 <input type="submit" value="Visualizza quiz">
 </form>
@@ -31,7 +32,10 @@ Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
 <form action="getQuizUtente">
 <input type='hidden' name='username' value=<%=a.getUsername()%>>
 <input type='submit' value='Quiz svolti'>
+
+
 </form>
+
 
 </body>
 </html>
