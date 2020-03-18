@@ -41,6 +41,8 @@ public class AllievoServiceImpl implements AllievoServiceInterface {
 	
 	@Override
 	public void cancellaAllievo(String username) throws Exception {
+		//delete allievo-quiz
+		// delete report
 		dao.delete(username);
 		conn.commit();
 	}

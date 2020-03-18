@@ -30,8 +30,10 @@ public class modificaDatiServlet extends HttpServlet {
 			
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			getServletContext().
+			getRequestDispatcher("/WEB-INF/jsp/errore.jsp").
+			forward(request, response);
 		}
 		
 		
