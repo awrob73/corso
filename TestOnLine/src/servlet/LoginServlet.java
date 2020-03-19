@@ -14,13 +14,20 @@ import service.AllievoServiceImpl;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private AllievoServiceImpl asi;
+	
+	public LoginServlet() throws Exception {
+		super();
+		asi = AllievoServiceImpl.getInstance();
+		// TODO Auto-generated constructor stub
+	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 
-			AllievoServiceImpl asi = new AllievoServiceImpl();
+
 			Allievo a = asi.leggiDatiAllievo(username);
 			
 			if (a.getPassword().equals(password) ) {

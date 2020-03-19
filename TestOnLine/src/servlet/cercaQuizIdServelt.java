@@ -18,6 +18,17 @@ import service.QuizServiceImpl;
 @WebServlet("/getQuizId")
 public class cercaQuizIdServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private AllievoServiceImpl asi ;
+	
+	
+	
+	public cercaQuizIdServelt() throws Exception {
+		super();
+		this.asi = AllievoServiceImpl.getInstance();
+		// TODO Auto-generated constructor stub
+	}
+
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,7 +37,6 @@ public class cercaQuizIdServelt extends HttpServlet {
 			String Id = request.getParameter("Id");
 			int QuizId = Integer.parseInt(Id);
 
-			AllievoServiceImpl asi = new AllievoServiceImpl();
 			Allievo a = asi.leggiDatiAllievo(username);
 			request.setAttribute("allievo", a);
 

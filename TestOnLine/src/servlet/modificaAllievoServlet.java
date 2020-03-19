@@ -15,6 +15,14 @@ import service.AllievoServiceImpl;
  */
 @WebServlet("/modificaAllievo")
 public class modificaAllievoServlet extends HttpServlet {
+	
+private AllievoServiceImpl asi ;
+	
+
+	public modificaAllievoServlet() throws Exception {
+	super();
+	this.asi = AllievoServiceImpl.getInstance();
+}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -24,7 +32,6 @@ public class modificaAllievoServlet extends HttpServlet {
 			String newPass = request.getParameter("password");
 			String newEmail = request.getParameter("email");
 			
-			AllievoServiceImpl asi= new AllievoServiceImpl();
 			Allievo a = asi.leggiDatiAllievo(username);
 			
 			if(newNome!= null && newNome != a.getNome()) {

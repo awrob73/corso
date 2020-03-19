@@ -18,6 +18,14 @@ import service.AllievoServiceImpl;
 public class RegistraAllievoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+private AllievoServiceImpl asi ;
+	
+
+	public RegistraAllievoServlet() throws Exception {
+	super();
+	this.asi = AllievoServiceImpl.getInstance();
+}
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
@@ -41,8 +49,7 @@ public class RegistraAllievoServlet extends HttpServlet {
 			a.setPassword(password);
 			a.setStato("on");
 			
-			AllievoServiceImpl service = new AllievoServiceImpl();
-			service.registraAllievo(a);
+			asi.registraAllievo(a);
 			
 			request.setAttribute("allievo", a);
 			

@@ -1,13 +1,14 @@
 package dao;
 
+import java.sql.Connection;
 import java.util.List;
 
 import entity.Allievo;
 
 public interface AllievoDAO {
-	public Allievo select(String username) throws Exception;
-	public List<Allievo> selectAll() throws Exception;
-	public void insert(Allievo a) throws Exception;
-	public void delete(String username) throws Exception;
-	public void update(Allievo a) throws Exception;
+	public Allievo select(Connection conn,String username) throws Exception;
+	public List<Allievo> selectAll(Connection conn) throws Exception;
+	public void insert(Connection conn,Allievo a) throws Exception;
+	public void delete(Connection conn,String username) throws Exception;
+	public void update(Connection conn,Allievo a) throws Exception;
 }

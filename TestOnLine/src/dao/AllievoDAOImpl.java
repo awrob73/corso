@@ -11,14 +11,22 @@ import entity.Allievo;
 //modifica
 public class AllievoDAOImpl implements AllievoDAO {
 
-	private Connection conn;
+private static AllievoDAOImpl instance;
 
-	public AllievoDAOImpl() throws Exception {
-		conn = SingletonConnection.getConnection();
+
+	
+	public static AllievoDAOImpl getInstance() throws Exception {
+		if(instance==null) instance=new AllievoDAOImpl();
+	return instance;
+}
+
+
+	private AllievoDAOImpl() throws Exception {
+		
 	}
 
 	@Override
-	public Allievo select(String username) throws Exception {
+	public Allievo select(Connection conn, String username) throws Exception {
 
 		String sql = "SELECT * FROM allievo WHERE username=?";
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -44,7 +52,7 @@ public class AllievoDAOImpl implements AllievoDAO {
 	}
 
 	@Override
-	public List<Allievo> selectAll() throws Exception {
+	public List<Allievo> selectAll(Connection conn) throws Exception {
 
 		String sql = "select * from allievo";
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -75,7 +83,7 @@ public class AllievoDAOImpl implements AllievoDAO {
 	}
 
 	@Override
-	public void insert(Allievo a) throws Exception {
+	public void insert(Connection conn, Allievo a) throws Exception {
 		String sql = "insert into allievo value(?,?,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 
@@ -93,7 +101,7 @@ public class AllievoDAOImpl implements AllievoDAO {
 	}
 
 	@Override
-	public void delete(String username) throws Exception {
+	public void delete(Connection conn, String username) throws Exception {
 		String sql = "delete from allievo where username = ? ";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
@@ -104,7 +112,7 @@ public class AllievoDAOImpl implements AllievoDAO {
 	}
 
 	@Override
-	public void update(Allievo a) throws Exception {
+	public void update(Connection conn, Allievo a) throws Exception {
 		String sql = "UPDATE allievo SET nome=?, cognome=?, email=?, password=?, stato=? WHERE username=? ";
 		PreparedStatement ps = conn.prepareStatement(sql);
 

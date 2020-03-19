@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import entity.Domanda;
 import entity.Risposta;
+import service.AllievoServiceImpl;
 import service.DomandaServiceImpl;
 import service.RispostaServiceImpl;
 
@@ -19,6 +20,15 @@ import service.RispostaServiceImpl;
 @WebServlet("/getRisposte")
 public class getRisposteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	private DomandaServiceImpl dsi ;
+	
+	
+	public getRisposteServlet() {
+		super();
+		// this.dsi = DomandaServiceImpl.getInstance();		
+	}
+
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,7 +38,7 @@ public class getRisposteServlet extends HttpServlet {
 		String conversione = request.getParameter("id");
 		int id = Integer.parseInt(conversione);
 		
-		DomandaServiceImpl dsi = new DomandaServiceImpl();
+
 		Domanda d = dsi.leggiDomanda(id);
 		
 		RispostaServiceImpl rsi = new RispostaServiceImpl();
