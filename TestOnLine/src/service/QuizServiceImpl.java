@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.util.List;
 
 import dao.DataSource;
+import dao.DomandaDAOImpl;
 import dao.QuizDAOImpl;
+import dao.RispostaDAOImpl;
 import entity.Allievo;
 import entity.Argomento;
 import entity.Domanda;
@@ -15,11 +17,15 @@ public class QuizServiceImpl implements QuizServiceInterface {
 
 	private static QuizServiceImpl instance;
 	private QuizDAOImpl dao;
+	private DomandaDAOImpl domanda;
+	private RispostaDAOImpl risposta;
 	private DataSource dataSource;
 
 	private QuizServiceImpl() throws Exception {
 		this.dataSource = DataSource.getInstance();
 		this.dao = QuizDAOImpl.getInstance();
+		this.domanda = DomandaDAOImpl.getInstance();
+		this.risposta = RispostaDAOImpl.getInstance();
 	}
 
 	public static QuizServiceImpl getInstance() throws Exception {
@@ -76,26 +82,33 @@ public class QuizServiceImpl implements QuizServiceInterface {
 
 	@Override
 	public void updateQuiz(Quiz q) throws Exception {
-		// TODO Auto-generated method stub
+		Connection conn = dataSource.getConnection();
+		dao.update(conn, q);
+		conn.commit();
 
 	}
 
 	@Override
 	public void deleteQuiz(Quiz q) throws Exception {
-		// TODO Auto-generated method stub
-
+		Connection conn = dataSource.getConnection();
+		dao.delete(conn, q);
+		conn.commit();
 	}
 
 	@Override
 	public List<Domanda> selectAllByQuiz(Quiz q) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = dataSource.getConnection();
+		List<Domanda> lista = domanda.select(conn, q);
+		conn.commit();
+		return lista;
 	}
 
 	@Override
 	public List<Risposta> selectAllByDomanda(Domanda d) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = dataSource.getConnection();
+		List<Risposta> lista = risposta.select(conn, d);
+		conn.commit();
+		return lista;
 	}
 
 }
