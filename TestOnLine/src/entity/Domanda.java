@@ -52,12 +52,12 @@ public class Domanda {
 	}
 
 	
-	public int getNumero_domanda() {
+	public int getNumeroDomanda() {
 		return numeroDomanda;
 	}
 
-	public void setNumero_domanda(int numero_domanda) {
-		this.numeroDomanda = numero_domanda;
+	public void setNumeroDomanda(int numeroDomanda) {
+		this.numeroDomanda = numeroDomanda;
 	}
 
 	@Override
