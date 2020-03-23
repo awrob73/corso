@@ -8,5 +8,6 @@ import entity.Risposta;
 public interface RispostaServiceInterface {
 	
 	public List<Risposta> stampaRiposteDomanda(Domanda d) throws Exception;
+	public Risposta stampaRispostaId(int id) throws Exception;
 
 }
