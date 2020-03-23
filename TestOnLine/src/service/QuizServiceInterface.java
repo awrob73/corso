@@ -21,7 +21,7 @@ public interface QuizServiceInterface {
 	
 	public List<Argomento> selectAllArgomento() throws Exception;
 	
-	public List<Quiz> selectQuizArgomento(String argomento) throws Exception;
+	public List<Quiz> selectQuizArgomento(Argomento argomento) throws Exception;
 	
 	public void updateQuiz(Quiz q) throws Exception;
 	

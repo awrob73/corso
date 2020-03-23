@@ -13,7 +13,7 @@
 <body>
 <%Allievo a = (Allievo)request.getAttribute("allievo");  %> <strong>
 <%=a.getUsername()%> </strong> ecco i tuoi dati, puoi modificarli. <p>
-
+<form action="modificaAllievo">
         <strong> Nome </strong>
 		<input type="text" name="nome" value=<%=a.getNome() %>>  <br>
 		<strong> Cognome </strong>
