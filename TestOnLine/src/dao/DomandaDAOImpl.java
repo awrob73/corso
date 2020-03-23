@@ -32,4 +32,22 @@ public class DomandaDAOImpl implements DomandaDAO {
 		return null;
 	}
 
+	@Override
+	public void insert(Connection conn, Domanda d) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Connection conn, Domanda d) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Connection conn, Domanda d) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

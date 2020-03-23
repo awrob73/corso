@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entity.Allievo;
-//modifica
+
 public class AllievoDAOImpl implements AllievoDAO {
 
 private static AllievoDAOImpl instance;

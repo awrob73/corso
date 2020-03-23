@@ -32,4 +32,22 @@ public class RispostaDAOImpl implements RispostaDAO {
 		return null;
 	}
 
+	@Override
+	public void insert(Connection conn, Risposta risp) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Connection conn, Risposta risp) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Connection conn, Risposta risp) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

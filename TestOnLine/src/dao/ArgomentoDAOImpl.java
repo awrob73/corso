@@ -31,4 +31,22 @@ public class ArgomentoDAOImpl implements ArgomentoDAO {
 		return null;
 	}
 
+	@Override
+	public void Insert(Connection conn, Argomento arg) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Connection conn, Argomento arg) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Connection conn, Argomento arg) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

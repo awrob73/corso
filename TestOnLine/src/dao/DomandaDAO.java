@@ -9,5 +9,8 @@ import entity.Quiz;
 public interface DomandaDAO {
 	public List<Domanda> select(Connection conn, Quiz q) throws Exception;
 	public Domanda select(Connection conn, int id) throws Exception;
+	public void insert(Connection conn, Domanda d) throws Exception;
+	public void delete(Connection conn, Domanda d) throws Exception;
+	public void update(Connection conn, Domanda d) throws Exception;
 
 }

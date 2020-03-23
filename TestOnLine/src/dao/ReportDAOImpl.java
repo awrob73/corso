@@ -45,4 +45,16 @@ public class ReportDAOImpl implements ReportDAO {
 
 	}
 
+	@Override
+	public void delete(Connection conn, Report r) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Connection conn, Report r) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
