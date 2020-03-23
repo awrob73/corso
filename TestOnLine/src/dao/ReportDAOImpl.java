@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import entity.Allievo;
+import entity.AllievoQuiz;
 import entity.Report;
 
 public class ReportDAOImpl implements ReportDAO {
@@ -28,7 +29,7 @@ public class ReportDAOImpl implements ReportDAO {
 	}
 
 	@Override
-	public List<Report> selectAll(Connection conn, Allievo a) throws Exception {
+	public List<Report> selectAll(Connection conn, AllievoQuiz aq) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
