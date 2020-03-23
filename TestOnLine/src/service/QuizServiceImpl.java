@@ -110,5 +110,14 @@ public class QuizServiceImpl implements QuizServiceInterface {
 		conn.commit();
 		return lista;
 	}
+	
+	public List<Quiz> selectQuizArgomento(String descrizione) throws Exception {
+		Connection conn = dataSource.getConnection(); 
+		List<Quiz> lista = dao.selectArg(conn, descrizione); 
+		conn.commit();
+		
+		return lista;
+		
+	}
 
 }

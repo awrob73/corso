@@ -15,6 +15,7 @@ public interface QuizDAO {
 	public void insert(Connection conn, Quiz q) throws Exception;
 	public void delete(Connection conn, Quiz q) throws Exception;
 	public void update(Connection conn, Quiz q) throws Exception;
+	public List<Quiz> selectArg(Connection conn, String descrizione) throws Exception;
 	
 
 }

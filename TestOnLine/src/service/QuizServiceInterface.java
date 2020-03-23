@@ -23,6 +23,8 @@ public interface QuizServiceInterface {
 	
 	public List<Quiz> selectQuizArgomento(Argomento argomento) throws Exception;
 	
+	public List<Quiz> selectQuizArgomento(String descrizione) throws Exception;
+	
 	public void updateQuiz(Quiz q) throws Exception;
 	
 	public void deleteQuiz(Quiz q) throws Exception;
