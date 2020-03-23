@@ -50,7 +50,7 @@ a:link:hover, a:visited:hover{
 
 <ul>
 <% for(int i = 0; i< lista.size(); i++) {
-	out.println("<li> <a href=AAA="+ lista.get(i).getDescrizione() +">"+ lista.get(i).getDescrizione() + "</a> </li>");
+	out.println("<li> <a href=quizargomento?argomento="+ lista.get(i).getDescrizione() +">"+ lista.get(i).getDescrizione() + "</a> </li>");
  } 
  %>
 </ul><br><br>
