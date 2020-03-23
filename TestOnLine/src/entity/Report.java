@@ -13,25 +13,27 @@ public class Report {
 	
 	private Allievo allievo;
 	
+	private AllievoQuiz aq;
+	
 	private Quiz quiz;
 	
 	private Date dataReport;
 
 	public Report() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	
-	public Report(int id, Domanda domanda, Risposta risposta, Allievo allievo, Quiz quiz, Date dataReport) {
+
+	public Report(int id, Domanda domanda, Risposta risposta, Allievo allievo, AllievoQuiz aq, Quiz quiz,
+			Date dataReport) {
 		super();
 		this.id = id;
 		this.domanda = domanda;
 		this.risposta = risposta;
 		this.allievo = allievo;
+		this.aq = aq;
 		this.quiz = quiz;
 		this.dataReport = dataReport;
 	}
-
 
 
 	public int getId() {
@@ -87,11 +89,21 @@ public class Report {
 		this.dataReport = dataReport;
 	}
 
+	public AllievoQuiz getAq() {
+		return aq;
+	}
+
+	public void setAq(AllievoQuiz aq) {
+		this.aq = aq;
+	}
+
 	@Override
 	public String toString() {
-		return "Report [id=" + id + ", domanda=" + domanda + ", risposta=" + risposta + ", allievo=" + allievo
-				+ ", quiz=" + quiz + ", dataReport=" + formattaDataReport() + "]";
+		return "Report [id=" + id + ", domanda=" + domanda + ", risposta=" + risposta + ", aq=" + aq + ", quiz=" + quiz
+				+ ", dataReport=" + formattaDataReport() + "]";
 	}
+
+
 
 
 	
