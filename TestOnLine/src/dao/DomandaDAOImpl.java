@@ -69,13 +69,9 @@ public class DomandaDAOImpl implements DomandaDAO {
 			d.setQuiz(q);
 			d.setQuesito(quesito);
 			d.setNumeroDomanda(numeroDomanda);
-			return d;
 		}
 		
-		
-		
-		
-		return null;
+		return d;
 	}
 
 	@Override
@@ -96,4 +92,32 @@ public class DomandaDAOImpl implements DomandaDAO {
 		
 	}
 
-}
+	@Override
+	public List<Domanda> selectAll(Connection conn) throws Exception {
+		
+		String sql = "SELECT * FROM DOMANDA";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		
+		List<Domanda> list = new ArrayList<Domanda>();
+		
+		while(rs.next()) {
+			Domanda d = new Domanda();
+			int id = rs.getInt("id");
+			int idQuiz = rs.getInt("id_quiz");
+			String quesito = rs.getString("quesito");
+			int numeroDomanda = rs.getInt("numero_domanda");
+			d.setId(id);
+			d.getQuiz().setId(idQuiz);
+			d.setQuesito(quesito);
+			d.setNumeroDomanda(numeroDomanda);
+			list.add(d);
+		}
+		
+		conn.commit();
+		return list;
+	}
+	}
+
+
