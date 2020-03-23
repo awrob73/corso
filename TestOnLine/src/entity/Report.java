@@ -1,5 +1,8 @@
 package entity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Report {
 	
 	private int id;
@@ -11,6 +14,8 @@ public class Report {
 	private Allievo allievo;
 	
 	private Quiz quiz;
+	
+	private Date dataReport;
 
 	public int getId() {
 		return id;
@@ -51,11 +56,26 @@ public class Report {
 	public void setQuiz(Quiz quiz) {
 		this.quiz = quiz;
 	}
+	
+	public Date getDataReport() {
+		return dataReport;
+	}
+	
+	private String formattaDataReport() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		return sdf.format(dataReport);
+	}
+
+	public void setDataReport(Date dataReport) {
+		this.dataReport = dataReport;
+	}
 
 	@Override
 	public String toString() {
 		return "Report [id=" + id + ", domanda=" + domanda + ", risposta=" + risposta + ", allievo=" + allievo
-				+ ", quiz=" + quiz + "]";
+				+ ", quiz=" + quiz + ", dataReport=" + formattaDataReport() + "]";
 	}
+
+
 	
 }
