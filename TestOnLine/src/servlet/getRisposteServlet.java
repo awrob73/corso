@@ -15,55 +15,43 @@ import service.AllievoServiceImpl;
 import service.DomandaServiceImpl;
 import service.RispostaServiceImpl;
 
-
-
 @WebServlet("/getRisposte")
 public class getRisposteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private DomandaServiceImpl dsi ;
-	
-	
-	public getRisposteServlet() {
+
+	private DomandaServiceImpl dsi;
+	private RispostaServiceImpl rsi;
+
+	public getRisposteServlet() throws Exception{
 		super();
-		// this.dsi = DomandaServiceImpl.getInstance();		
+		this.dsi= DomandaServiceImpl.getInstance();
+		this.rsi = RispostaServiceImpl.getInstance();	
 	}
 
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	try {
-		
-		String conversione = request.getParameter("id");
-		int id = Integer.parseInt(conversione);
-		
+		try {
 
-		Domanda d = dsi.leggiDomanda(id);
-		
-		RispostaServiceImpl rsi = new RispostaServiceImpl();
-		
-		List<Risposta> lista = rsi.stampaRiposteDomanda(d);
-		
-		request.setAttribute("risposte", lista);
-		request.setAttribute("domanda", id);
-			
-		getServletContext().
-		getRequestDispatcher("/WEB-INF/jsp/getRisposte.jsp").
-		forward(request, response);
-	
-	} catch (Exception e) {
-	
-		e.printStackTrace();
-		
-		getServletContext().
-		getRequestDispatcher("/WEB-INF/jsp/errore.jsp").
-		forward(request, response);
+			String conversione = request.getParameter("id");
+			int id = Integer.parseInt(conversione);
 
-		
+			Domanda d = dsi.leggiDomanda(id);
 
-		
+			List<Risposta> lista = rsi.stampaRiposteDomanda(d);
+
+			request.setAttribute("risposte", lista);
+			request.setAttribute("domanda", id);
+
+			getServletContext().getRequestDispatcher("/WEB-INF/jsp/getRisposte.jsp").forward(request, response);
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+			getServletContext().getRequestDispatcher("/WEB-INF/jsp/errore.jsp").forward(request, response);
+
+		}
+
 	}
-
-}
 }
