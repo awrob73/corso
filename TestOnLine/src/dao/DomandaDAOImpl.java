@@ -26,28 +26,39 @@ public class DomandaDAOImpl implements DomandaDAO {
 	@Override
 	public List<Domanda> select(Connection conn, Quiz q) throws Exception {
 		
-		String sql = "SELECT * FROM DOMANDA WHERE ID_QUIZ = ?";
-		
+
+		String sql = "select domanda.* from domanda join quiz on domanda.id_quiz=quiz.id where quiz.id = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, q.getId());
-		ResultSet rs = ps.executeQuery();
 		
-		List<Domanda> list = new ArrayList<Domanda>();
+		ResultSet rs = ps.executeQuery(); 
+				
+		List<Domanda> lista = new ArrayList<>();
 		
-		while(rs.next()) {
+		while(rs.next()) { 
+			
 			Domanda d = new Domanda();
+			
+			// prendo i dati dalla tabella
 			int id = rs.getInt("id");
+			//Argomento arg = new Argomento(rs.getInt("id"),rs.getString("descrizione"));
+			//q = (rs.getInt("id"), arg, rs.getString("difficolta"));
 			String quesito = rs.getString("quesito");
 			int numeroDomanda = rs.getInt("numero_domanda");
+					
 			d.setId(id);
 			d.setQuiz(q);
 			d.setQuesito(quesito);
 			d.setNumeroDomanda(numeroDomanda);
-			list.add(d);
+			
+			
+			lista.add(d); 
+			
 		}
+	
 		
-		conn.commit();
-		return list;
+		return lista;
+		
 	}
 
 	@Override
@@ -115,7 +126,6 @@ public class DomandaDAOImpl implements DomandaDAO {
 			list.add(d);
 		}
 		
-		conn.commit();
 		return list;
 	}
 	}

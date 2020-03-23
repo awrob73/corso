@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,21 +10,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import entity.Domanda;
+import entity.Quiz;
 import entity.Risposta;
 import service.DomandaServiceImpl;
+import service.QuizServiceImpl;
 import service.RispostaServiceImpl;
 
-@WebServlet("/getRisposte")
-public class getRisposteServlet extends HttpServlet {
+@WebServlet("/getDomande")
+public class getDomandeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private DomandaServiceImpl dsi;
-	private RispostaServiceImpl rsi;
+	private QuizServiceImpl qsi;
 
-	public getRisposteServlet() throws Exception {
+	public getDomandeServlet() throws Exception {
 		super();
 		this.dsi = DomandaServiceImpl.getInstance();
-		this.rsi = RispostaServiceImpl.getInstance();
+		this.qsi = QuizServiceImpl.getInstance();
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -33,19 +34,16 @@ public class getRisposteServlet extends HttpServlet {
 
 		try {
 
-			String conversione = request.getParameter("id_domanda");
+			String conversione = request.getParameter("id_quiz");
 			int id = Integer.parseInt(conversione);
 
-			Domanda d = dsi.leggiDomanda(id);
+			Quiz q = qsi.selectQuiz(id);
+			List<Domanda> lista = dsi.stampaDomandeQuiz(q);
 
-			List<Risposta> lista = rsi.stampaRiposteDomanda(d);
+			request.setAttribute("domande", lista);
+			request.setAttribute("quiz", id);
 
-			request.setAttribute("risposte", lista);
-			request.setAttribute("domanda", id);
-			PrintWriter pw = response.getWriter();
-			for (Risposta r : lista) {
-				pw.println(r.getDescrizione());
-			}
+			getServletContext().getRequestDispatcher("/WEB-INF/jsp/svolgiQuiz.jsp").forward(request, response);
 
 		} catch (Exception e) {
 
@@ -56,4 +54,5 @@ public class getRisposteServlet extends HttpServlet {
 		}
 
 	}
+
 }
