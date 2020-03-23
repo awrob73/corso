@@ -8,7 +8,7 @@ public class Domanda {
 	
 	private String quesito;
 	
-	private int numero_domanda;
+	private int numeroDomanda;
 
 	public int getId() {
 		return id;
@@ -36,16 +36,16 @@ public class Domanda {
 
 	
 	public int getNumero_domanda() {
-		return numero_domanda;
+		return numeroDomanda;
 	}
 
 	public void setNumero_domanda(int numero_domanda) {
-		this.numero_domanda = numero_domanda;
+		this.numeroDomanda = numero_domanda;
 	}
 
 	@Override
 	public String toString() {
-		return "Domanda [id=" + id + ", quiz=" + quiz + ", quesito=" + quesito + ", numero_domanda=" + numero_domanda
+		return "Domanda [id=" + id + ", quiz=" + quiz + ", quesito=" + quesito + ", numeroDomanda=" + numeroDomanda
 				+ "]";
 	}
 
