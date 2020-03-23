@@ -7,6 +7,8 @@ public class Domanda {
 	private Quiz quiz;
 	
 	private String quesito;
+	
+	private int numero_domanda;
 
 	public int getId() {
 		return id;
@@ -32,11 +34,20 @@ public class Domanda {
 		this.quesito = quesito;
 	}
 
-	@Override
-	public String toString() {
-		return "Domanda [id=" + id + ", quiz=" + quiz + ", quesito=" + quesito + "]";
+	
+	public int getNumero_domanda() {
+		return numero_domanda;
 	}
 
-	
+	public void setNumero_domanda(int numero_domanda) {
+		this.numero_domanda = numero_domanda;
+	}
+
+	@Override
+	public String toString() {
+		return "Domanda [id=" + id + ", quiz=" + quiz + ", quesito=" + quesito + ", numero_domanda=" + numero_domanda
+				+ "]";
+	}
+
 	
 }
