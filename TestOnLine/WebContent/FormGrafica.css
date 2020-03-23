@@ -1,21 +1,29 @@
 @charset "ISO-8859-1";
-
+/* sjh */
 
 h1 {
-	 
-	 margin-top: 0px;
-	 margin-botton: 0px;
-	 
+	margin-top: 0px;
+	margin-bottom: 10px;
 }
 
 h2 {
-	 
-	 margin-top: 0px;
-	 margin-botton: 0px;
-	 
+	margin-bottom: 10px;
+	margin-top: -5px;
 }
 
-input[type=text], select {
+div {
+	
+  width:300px;
+  height:270px;
+  right:0px; top:150px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 0px 30px 0px 0px;
+  border: 5px double #800000;
+}
+
+input[type=text] {
   font-family: "Times New Roman";
   width: 100%;
   padding: 10px 20px;
@@ -26,7 +34,6 @@ input[type=text], select {
   box-sizing: border-box;
   font-size: 15px;
 }
-
 input[type=submit] {
   width: 100%;
   background-color: #800000;
@@ -39,35 +46,124 @@ input[type=submit] {
   font-size: 15px;
 }
 
-label {
-font-family: "Arial";
-font-size: 15px;
-
-}
-
 input[type=submit]:hover {
   background-color: #e40101;
   font-size: 15px;
   margin: 8px 0
 }
 
-div {
+h1.formAllievoh1 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+h2.formAllievoh2 {
+	margin-bottom: 0px;
+	margin-top: -5px;
+}
+
+.formAllievoDiv {
 	
   width:300px;
-  height:350px;
+  height:460px;
   right:0px; top:150px;
   border-radius: 20px;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 10px;
   margin: 0px 30px 0px 0px;
   border: 5px double #800000;
   
 }
 
-.allievo {
+.paginaAllievoDiv {
 	
   width:300px;
-  height:480px;
+  height:250px;
+  right:0px; top:150px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 0px 30px 0px 0px;
+  border: 5px double #800000;
+  
+}
+
+#VisualizzaDatiAllievoh2 {
+	margin-bottom: -10px;
+}
+
+.VisualizzaDatiAllievoDiv {
+	
+  width:300px;
+  height:250px;
+  right:0px; top:150px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 0px 30px 0px 0px;
+  border: 5px double #800000;
+  
+}
+
+input.VisualizzaDatiAllievoSubmit[type=submit]{
+  width: 100%;
+  background-color: #800000;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+input.VisualizzaDatiAllievoSubmit[type=submit]:hover{
+  background-color: #e40101;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  
+}
+
+h1.PaqinaQuizh1 {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+h2.PaginaQuizh2 {
+	
+	margin-bottom: -10px;
+	margin-top: 10px;
+}
+
+.PaginaQuizDiv {
+	
+  width:300px;
+  height:320px;
+  right:0px; top:150px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin: 0px 30px 0px 0px;
+  border: 5px double #800000;
+  
+}
+
+#PaginaQuizCerca  {
+  width: 100%;
+  background-color: #800000;
+  color: white;
+  margin-top: -10px;
+  margin-bottom:-10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.erroreDiv{
+	
+  width:280px;
+  height:20px;
   right:0px; top:0px;
   border-radius: 20px;
   background-color: #f2f2f2;
@@ -75,4 +171,36 @@ div {
   margin: 0px 30px 0px 0px;
   border: 5px double #800000;
   
+}
+
+.eliminaAllievoDiv{
+	
+  width:150px;
+  height:20px;
+  right:0px; top:0px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 0px 30px 0px 0px;
+  border: 5px double #800000;
+  
+}
+
+.formModificaDatiDiv{
+	
+  width:300px;
+  height:450px;
+  right:0px; top:0px;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 0px 30px 0px 0px;
+  border: 5px double #800000;
+  
+}
+
+label {
+font-family: "Arial";
+font-size: 15px;
+
 }

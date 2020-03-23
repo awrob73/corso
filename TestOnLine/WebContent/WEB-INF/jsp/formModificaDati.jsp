@@ -1,3 +1,4 @@
+
 <%@page import="entity.Allievo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -5,20 +6,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Modifica Dati Allievo</title>
 <link rel="stylesheet" type="text/css" href="FormGrafica.css">
-<div>
+<div class="formModificaDatiDiv">
 </head>
 <body>
-<%Allievo a = (Allievo)request.getAttribute("allievo");  %>
-<%=a.getUsername()%> ecco i tuoi dati, puoi modificarli. <p>
-<form action="modificaAllievo">
+<%Allievo a = (Allievo)request.getAttribute("allievo");  %> <strong>
+<%=a.getUsername()%> </strong> ecco i tuoi dati, puoi modificarli. <p>
 
-		<input type="text" name="nome" value=<%=a.getNome() %>> nome <br>
-		<input type="text" name="cognome" value= <%=a.getCognome() %> > cognome <br>
-		<input type="hidden" name="username" value = <%=a.getUsername()%>> <br>
-	    <input type="text" name="email" value=<%=a.getEmail() %>> email <br>
-		<input type="text" name="password" value=<%=a.getPassword() %>> password <br>
+        <strong> Nome </strong>
+		<input type="text" name="nome" value=<%=a.getNome() %>>  <br>
+		<strong> Cognome </strong>
+		<input type="text" name="cognome" value= <%=a.getCognome() %> >  <br>
+		<strong> Username </strong>
+		<input type="text" name="username" value = <%=a.getUsername()%> > <br>
+		<strong> Email </strong>
+	    <input type="text" name="email" value=<%=a.getEmail() %>>  <br>
+	    <strong> Password </strong>
+		<input type="text" name="password" value=<%=a.getPassword() %>>  <br>
 		<input type="submit" value="modifica">
 
 </form>

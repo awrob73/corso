@@ -6,15 +6,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="FormGrafica.css">
 </head>
 <body>
-
 <%Allievo a = (Allievo)request.getAttribute("allievo"); %>
  
-PAGINA PRIVATA ALLIEVO
-<p>
- 
-Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
+<div class="paginaAllievoDiv">
+
+<h2>Benvenuto</h2>
+Utente registrato: <strong> <%= a.getNome() %> <%= a.getCognome() %> </strong><br>
 
 <form action="getAllievo">
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
@@ -31,9 +31,6 @@ Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
 <input type='submit' value='Logout'>
 </form>
 
-
-
-
-
+</div>
 </body>
 </html>

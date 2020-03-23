@@ -1,34 +1,41 @@
 <%@page import="entity.Allievo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<!--     sgs -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="FormGrafica.css">
 </head>
-<body>
-
+<div class="VisualizzaDatiAllievoDiv">
 <% Allievo a = (Allievo)request.getAttribute("allievo");  %>
 
-Allievo registrato correttamente. Riepilogo dati: <br>
+<h2 id="VisualizzaDatiAllievoh2"> Dati allievo </h2>  <br>
 
 
-username: <%= a.getUsername() %> <br>
-password: <%= a.getPassword() %> <br>
-nome: <%= a.getNome() %> <br>
-cognome: <%= a.getCognome() %> <br>
-email: <%= a.getEmail() %> <br>
+<strong>username: </strong>
+<%= a.getUsername() %> <br>
+<strong>password: </strong>
+<%= a.getPassword() %> <br>
+<strong>nome: </strong>
+<%= a.getNome() %> <br>
+<strong>cognome: </strong>
+<%= a.getCognome() %> <br>
+<strong>email: </strong>
+<%= a.getEmail() %> <br>
 
 <form action="modificaDati">
 <input type='hidden' name='username' value=<%=a.getUsername()%>>
-<input type='submit' value='modifica allievo'>
+<input class="VisualizzaDatiAllievoSubmit"type='submit' value='modifica allievo'>
 </form>
 
 <form action="cancellaAllievo">
 <input type='hidden' name='username' value=<%=a.getUsername()%>>
-<input type='submit' value='Elimina account'>
+<input class="VisualizzaDatiAllievoSubmit"type='submit' value='Elimina account'>
 </form>
 
+</div>
 </body>
 </html>

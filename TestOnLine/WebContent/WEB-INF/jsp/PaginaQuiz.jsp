@@ -6,35 +6,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="FormGrafica.css">
 </head>
 <body>
-
+<div class="PaginaQuizDiv">
 <%Allievo a = (Allievo)request.getAttribute("allievo"); %>
 
  
-PAGINA QUIZ
+<h1 class="PaqinaQuizh1">PAGINA QUIZ </h1>
 
-<p>
+<p> Benvenuto <strong> <%= a.getNome() %> <%= a.getCognome() %></p> </strong>
  
-Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
-
-<form action="argomenti">
+<form  action="argomenti">
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
-<input type="submit" value='Visualizza argomenti'>
+<input id="PaginaQuizCerca" type="submit" value='Visualizza argomenti'>
 </form>
 <p>
 <form action="getQuizId">
-<input type="text" name = "Id"> id quiz <br> 
+Inserisci <strong>id quiz </strong>
+<input type="text" name = "Id" placeholder="Digita Id quiz"> 
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
 <input type="submit" value="Visualizza quiz">
 </form>
 <p>
 <form action="getQuizUtente">
 <input type='hidden' name='username' value=<%=a.getUsername()%>>
-<input type='submit' value='Quiz svolti'>
+<input id="PaginaQuizCerca" type='submit' value='Quiz svolti'>
 
 
 </form>
+
+</div>
 
 
 </body>

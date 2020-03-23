@@ -16,7 +16,7 @@ elenco di tutti gli argomenti dei quiz <br>
 
 <ul>
 <% for(int i = 0; i< lista.size(); i++) {
-	out.println("<li>" + lista.get(i) + " <a href=AAA="+ lista.get(i).getDescrizione() +">visualizza quiz</a> </li>");
+	out.println("<li> <a href=AAA="+ lista.get(i).getDescrizione() +">"+ lista.get(i).getDescrizione() + "</a> </li>");
  } 
  %>
 </ul><br><br>
