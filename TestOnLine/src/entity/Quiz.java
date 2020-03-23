@@ -7,6 +7,20 @@ public class Quiz {
 	private Argomento argomento;
 	
 	private String difficolta;
+	
+	public Quiz() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Quiz(int id, Argomento argomento, String difficolta) {
+		super();
+		this.id = id;
+		this.argomento = argomento;
+		this.difficolta = difficolta;
+	}
+
+
 
 	public int getId() {
 		return id;

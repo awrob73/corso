@@ -9,6 +9,23 @@ public class Domanda {
 	private String quesito;
 	
 	private int numeroDomanda;
+	
+	
+
+	public Domanda() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public Domanda(int id, Quiz quiz, String quesito, int numeroDomanda) {
+		super();
+		this.id = id;
+		this.quiz = quiz;
+		this.quesito = quesito;
+		this.numeroDomanda = numeroDomanda;
+	}
+
 
 	public int getId() {
 		return id;

@@ -9,6 +9,23 @@ public class Risposta {
 	private String descrizione;
 	
 	private int valutazione;
+	
+	
+
+	public Risposta() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public Risposta(int id, Domanda domanda, String descrizione, int valutazione) {
+		super();
+		this.id = id;
+		this.domanda = domanda;
+		this.descrizione = descrizione;
+		this.valutazione = valutazione;
+	}
+
 
 	public int getId() {
 		return id;

@@ -17,6 +17,23 @@ public class Report {
 	
 	private Date dataReport;
 
+	public Report() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Report(int id, Domanda domanda, Risposta risposta, Allievo allievo, Quiz quiz, Date dataReport) {
+		super();
+		this.id = id;
+		this.domanda = domanda;
+		this.risposta = risposta;
+		this.allievo = allievo;
+		this.quiz = quiz;
+		this.dataReport = dataReport;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

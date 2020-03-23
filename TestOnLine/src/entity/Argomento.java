@@ -5,6 +5,22 @@ public class Argomento {
 	private int id;
 	
 	private String descrizione;
+	
+	
+
+	public Argomento() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public Argomento(int id, String descrizione) {
+		super();
+		this.id = id;
+		this.descrizione = descrizione;
+	}
+
+
 
 	public int getId() {
 		return id;

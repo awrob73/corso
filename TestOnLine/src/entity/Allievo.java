@@ -14,7 +14,23 @@ public class Allievo {
 	
 	private String stato;
 	
-	//prova modifica
+	
+
+	public Allievo() {
+		super();
+	}
+	
+
+	public Allievo(String username, String nome, String cognome, String email, String password, String stato) {
+		super();
+		this.username = username;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.email = email;
+		this.password = password;
+		this.stato = stato;
+	}
+
 
 	public String getUsername() {
 		return username;

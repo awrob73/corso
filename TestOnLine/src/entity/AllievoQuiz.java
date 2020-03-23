@@ -12,6 +12,23 @@ public class AllievoQuiz {
 	private Quiz q;
 	
 	private Date dataReport;
+	
+	
+
+	public AllievoQuiz() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public AllievoQuiz(int id, Allievo a, Quiz q, Date dataReport) {
+		super();
+		this.id = id;
+		this.a = a;
+		this.q = q;
+		this.dataReport = dataReport;
+	}
+
 
 	public int getId() {
 		return id;
