@@ -1,6 +1,9 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import entity.Argomento;
@@ -20,9 +23,30 @@ public class ArgomentoDAOImpl implements ArgomentoDAO {
 	}
 
 	@Override
-	public List<Argomento> selectAll(Connection conn) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+public List<Argomento> selectAll(Connection conn) throws Exception {
+		
+		String sql = "select * from argomento";
+		PreparedStatement ps = conn.prepareStatement(sql);
+
+		ResultSet rs = ps.executeQuery();
+
+		List<Argomento> list = new ArrayList<>();
+
+		while (rs.next()) {
+			Argomento arg = new Argomento();
+			int id = rs.getInt("id");
+			String descrizione = rs.getString("descrizione");
+
+			arg.setId(id);
+			arg.setDescrizione(descrizione);
+
+			list.add(arg);
+
+		}
+
+		conn.commit();
+		return list;
+
 	}
 
 	@Override
@@ -50,3 +74,6 @@ public class ArgomentoDAOImpl implements ArgomentoDAO {
 	}
 
 }
+
+
+

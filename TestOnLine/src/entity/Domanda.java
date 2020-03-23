@@ -65,6 +65,6 @@ public class Domanda {
 		return "Domanda [id=" + id + ", quiz=" + quiz + ", quesito=" + quesito + ", numeroDomanda=" + numeroDomanda
 				+ "]";
 	}
-//
+
 	
 }

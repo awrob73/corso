@@ -18,9 +18,9 @@ PAGINA QUIZ
  
 Benvenuto <%= a.getNome() %> <%= a.getCognome() %> <br>
 
-<form action="getArgomenti">
+<form action="argomenti">
 <input type="hidden" name="username" value=<%=a.getUsername()%>>
-<input type="submit" value='Cerca'>
+<input type="submit" value='Visualizza argomenti'>
 </form>
 <p>
 <form action="getQuizId">

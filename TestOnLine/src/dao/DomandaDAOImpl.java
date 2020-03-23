@@ -1,6 +1,9 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import entity.Domanda;
@@ -22,13 +25,56 @@ public class DomandaDAOImpl implements DomandaDAO {
 
 	@Override
 	public List<Domanda> select(Connection conn, Quiz q) throws Exception {
-		// valentina
-		return null;
+		
+		String sql = "SELECT * FROM DOMANDA WHERE ID_QUIZ = ?";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, q.getId());
+		ResultSet rs = ps.executeQuery();
+		
+		List<Domanda> list = new ArrayList<Domanda>();
+		
+		while(rs.next()) {
+			Domanda d = new Domanda();
+			int id = rs.getInt("id");
+			String quesito = rs.getString("quesito");
+			int numeroDomanda = rs.getInt("numero_domanda");
+			d.setId(id);
+			d.setQuiz(q);
+			d.setQuesito(quesito);
+			d.setNumeroDomanda(numeroDomanda);
+			list.add(d);
+		}
+		
+		conn.commit();
+		return list;
 	}
 
 	@Override
 	public Domanda select(Connection conn, int id) throws Exception {
-		// TODO Auto-generated method stub
+		
+		String sql = "SELECT * FROM DOMANDA WHERE ID = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+		Quiz q = new Quiz();
+		Domanda d = new Domanda();
+		
+		while(rs.next()) {
+			int idDomanda = rs.getInt("id");
+			q.setId(rs.getInt("id_quiz"));
+			String quesito = rs.getString("quesito");
+			int numeroDomanda = rs.getInt("numero_domanda");
+			d.setId(id);
+			d.setQuiz(q);
+			d.setQuesito(quesito);
+			d.setNumeroDomanda(numeroDomanda);
+			return d;
+		}
+		
+		
+		
+		
 		return null;
 	}
 
