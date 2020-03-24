@@ -29,7 +29,7 @@ Inserisci <strong>id quiz </strong>
 <input type="submit" value="Visualizza quiz">
 </form>
 <p>
-<form action="getQuizUtente">
+<form action="getQuizSvoltiUtente">
 <input type='hidden' name='username' value=<%=a.getUsername()%>>
 <input id="PaginaQuizCerca" type='submit' value='Quiz svolti'>
 

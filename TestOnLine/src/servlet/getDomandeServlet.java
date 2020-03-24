@@ -41,22 +41,26 @@ public class getDomandeServlet extends HttpServlet {
 			int id = Integer.parseInt(conversione);
 
 			Quiz q = qsi.selectQuiz(id);
-			List<Domanda> lista = dsi.stampaDomandeQuiz(q);
-			List<Risposta> listaAppo= new ArrayList<Risposta>();
-			List<Risposta> listaRisp = new ArrayList<Risposta>();
-			for(Domanda d:lista) {
-				listaAppo = rsi.stampaRiposteDomanda(d);
-				for(Risposta r:listaAppo) {
-					listaRisp.add(r);
-				}
+			List<Domanda> listaDom = dsi.stampaDomandeQuiz(q);
+			String intc = request.getParameter("contatore");
+			System.out.println(intc);
+			int i = Integer.parseInt(intc);
+
+			if (i < listaDom.size()) {
+
+				request.setAttribute("domanda", listaDom.get(i));
+
+				List<Risposta> listaRisp = new ArrayList<Risposta>();
+				listaRisp = rsi.stampaRiposteDomanda(listaDom.get(i));
+
+				request.setAttribute("risposte", listaRisp);
+				request.setAttribute("contatore1",i);
+				getServletContext().getRequestDispatcher("/WEB-INF/jsp/svolgiQuiz.jsp").forward(request, response);
+
+			} else {
+
+				getServletContext().getRequestDispatcher("/WEB-INF/jsp/report.jsp").forward(request, response);
 			}
-			
-
-			request.setAttribute("domande", lista);
-			request.setAttribute("quiz", id);
-			request.setAttribute("risposte", listaRisp);
-
-			getServletContext().getRequestDispatcher("/WEB-INF/jsp/svolgiQuiz.jsp").forward(request, response);
 
 		} catch (Exception e) {
 

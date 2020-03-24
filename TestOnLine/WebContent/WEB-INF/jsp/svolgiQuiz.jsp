@@ -38,29 +38,34 @@
 
 <body>
 	<%
-		List<Domanda> domande = (List<Domanda>) request.getAttribute("domande");
+	
 	%>
 	<%
+		Domanda domanda = (Domanda) request.getAttribute("domanda");
+		
 		List<Risposta> risposte = (List<Risposta>) request.getAttribute("risposte");
+		
+		int i =(Integer) request.getAttribute("contatore1");
+		
 	%>
 
 	<ul>
 		<% 
-			for (int i = 0; i < domande.size(); i++) {
 
-				out.println("<li> domanda n. " + (i + 1) + "</li> <br>" + domande.get(i).getQuesito() + "<br>");
-				out.println("<form action='getRisposte'>");
+
+				out.println("<li> domanda n. " + (i+1) + "</li> <br>" + domanda.getQuesito() + "<br>");
+				
+				out.println("<form action='getDomande'>");
+				out.println("<input type='hidden' name='contatore' value="+(i+1)+">");
+				out.println("<input type='hidden' name='id_quiz' value="+domanda.getQuiz().getId()+">");
 				for (int j = 0; j < risposte.size(); j++) {
 					
-
-					if (risposte.get(j).getDomanda().getId() == domande.get(i).getId()) {
-
-						out.println("<input type='radio' name='idRisposta' value="+risposte.get(j).getId()+">"
+					out.println("<input type='radio' name='idRisposta' value="+risposte.get(j).getId()+">"
 								+ risposte.get(j).getDescrizione()+"<br>");
-					}
-				}out.println("<input type='submit' value='conferma' ></form>");
+					
+				}out.println("<input type='submit' value='conferma' ></form> <p>");
 
-			}
+
 		%>
 	</ul>
 	<div id="demo"></div>
