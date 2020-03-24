@@ -21,6 +21,7 @@ Dati quiz: <br>
 <form action="getDomande">
 <input type="hidden" name="id_quiz" value=<%=q.getId()%>>
 <input type="hidden" name="contatore" value="0">
+<input type="hidden" name="idRisposta" value="-1">
 <input type="submit" value="Svolgi!">
 </form>
 </body>

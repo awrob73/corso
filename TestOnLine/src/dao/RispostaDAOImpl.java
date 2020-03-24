@@ -60,8 +60,29 @@ public class RispostaDAOImpl implements RispostaDAO {
 
 	@Override
 	public Risposta select(Connection conn, int id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from risposta where id = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, id);
+
+		ResultSet rs = ps.executeQuery();
+		Risposta r = new Risposta();
+
+		if (rs.next()) {
+
+			id = rs.getInt("id");
+			// Argomento arg = new Argomento(rs.getInt("id"),rs.getString("descrizione"));
+			// Quiz q = new Quiz(rs.getInt("id"), arg, rs.getString("difficolta"));
+			// d = new Domanda(rs.getInt("id"),rs.getString("descrizione"),
+			// rs.getString("quesito"), rs.getInt("numero_domanda"));
+			String descrizione = rs.getString("descrizione");
+			int valutazione = rs.getInt("valutazione");
+
+			r.setId(id);
+			r.setDescrizione(descrizione);
+			r.setValutazione(valutazione);
+		}
+
+		return r;
 	}
 
 	@Override
