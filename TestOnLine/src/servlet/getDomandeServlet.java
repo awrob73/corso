@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -22,11 +23,13 @@ public class getDomandeServlet extends HttpServlet {
 
 	private DomandaServiceImpl dsi;
 	private QuizServiceImpl qsi;
+	private RispostaServiceImpl rsi;
 
 	public getDomandeServlet() throws Exception {
 		super();
 		this.dsi = DomandaServiceImpl.getInstance();
 		this.qsi = QuizServiceImpl.getInstance();
+		this.rsi = RispostaServiceImpl.getInstance();
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -39,9 +42,19 @@ public class getDomandeServlet extends HttpServlet {
 
 			Quiz q = qsi.selectQuiz(id);
 			List<Domanda> lista = dsi.stampaDomandeQuiz(q);
+			List<Risposta> listaAppo= new ArrayList<Risposta>();
+			List<Risposta> listaRisp = new ArrayList<Risposta>();
+			for(Domanda d:lista) {
+				listaAppo = rsi.stampaRiposteDomanda(d);
+				for(Risposta r:listaAppo) {
+					listaRisp.add(r);
+				}
+			}
+			
 
 			request.setAttribute("domande", lista);
 			request.setAttribute("quiz", id);
+			request.setAttribute("risposte", listaRisp);
 
 			getServletContext().getRequestDispatcher("/WEB-INF/jsp/svolgiQuiz.jsp").forward(request, response);
 

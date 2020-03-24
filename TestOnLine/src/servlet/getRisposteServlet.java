@@ -37,8 +37,12 @@ public class getRisposteServlet extends HttpServlet {
 			int id = Integer.parseInt(conversione);
 
 			Domanda d = dsi.leggiDomanda(id);
+			
 
 			List<Risposta> lista = rsi.stampaRiposteDomanda(d);
+			for(Risposta r:lista) {
+				System.out.println(r);
+			}
 
 			request.setAttribute("risposte", lista);
 			request.setAttribute("domanda", id);
