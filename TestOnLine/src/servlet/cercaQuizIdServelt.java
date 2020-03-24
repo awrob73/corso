@@ -52,7 +52,7 @@ public class cercaQuizIdServelt extends HttpServlet {
 
 				request.setAttribute("quiz", q);
 
-				getServletContext().getRequestDispatcher("/WEB-INF/jsp/%%%%.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/WEB-INF/jsp/infoQuiz.jsp").forward(request, response);
 			}
 
 		} catch (NumberFormatException e) {
