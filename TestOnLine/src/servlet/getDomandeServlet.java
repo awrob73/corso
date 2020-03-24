@@ -46,7 +46,7 @@ public class getDomandeServlet extends HttpServlet {
 			String conversione = request.getParameter("id_quiz");
 			int id = Integer.parseInt(conversione);
 			String idRi =request.getParameter("idRisposta");
-			System.out.println(idRi);
+			//System.out.println(idRi);
 			int idRisposta = Integer.parseInt(idRi);
 
 			Quiz q = qsi.selectQuiz(id);
@@ -68,7 +68,7 @@ public class getDomandeServlet extends HttpServlet {
 				r.setQuiz(q);
 				r.setDomanda(listaDom.get(i));
 				r.setDataReport(new Date());
-				repsi.createReport(r);
+				//repsi.createReport(r);
 
 				List<Risposta> listaRisp = new ArrayList<Risposta>();
 				listaRisp = rsi.stampaRiposteDomanda(listaDom.get(i));

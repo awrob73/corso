@@ -123,4 +123,35 @@ public class AllievoQuizDAOImpl implements AllievoQuizDAO {
 		ps.executeUpdate();
 	}
 
+	@Override
+	public void delete(Connection conn, String username) throws Exception {
+		String sql = "DELETE FROM ALLIEVO_QUIZ WHERE USERNAME = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setString(1, username);
+		ps.executeUpdate();
+		
+	}
+
+	@Override
+	public List<AllievoQuiz> select(Connection conn, String username) throws Exception {
+		String sql = "SELECT * FROM allievo_quiz WHERE USERNAME = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, username);
+		List<AllievoQuiz> lista = new ArrayList<AllievoQuiz>();
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			AllievoQuiz aq = new AllievoQuiz();
+			aq.setId(rs.getInt("id"));
+			aq.getQ().setId(rs.getInt("id_quiz"));
+			aq.getA().setUsername(rs.getString("username"));
+			aq.setDataReport(rs.getDate("data"));
+			lista.add(aq);
+		}
+		conn.commit();
+		return lista;
+	}
+
 }
