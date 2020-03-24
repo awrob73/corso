@@ -1,4 +1,3 @@
-
 <%@page import="entity.Quiz"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -7,13 +6,43 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<title> Lista Argomenti </title>
+<link rel="stylesheet" type="text/css" href="FormGrafica.css">
 
+</head>
+<style>
+a:link, a:visited {
+  background-color: #800000;
+  color: white;
+  padding: 14px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  
+}
+
+li{
+margin-bottom: 10px;
+width: 200px;
+list-style-type: none;
+display: inline;
+
+}
+
+a:link:hover, a:visited:hover{
+  background-color: #e40101;
+  font-size: 15px;
+  margin-bottom: 10px;
+
+}
+</style>
+
+<body>
+<div class=listquizArgomentiDiv> 
 <% List<Quiz> lista = (List<Quiz>)request.getAttribute("descrizione"); %>
 
-elenco di tutti i quiz dell'argomento <%=lista.get(0).getArgomento().getDescrizione() %><br>
+Elenco di tutti i quiz dell'argomento <strong> <%=lista.get(0).getArgomento().getDescrizione() %> </strong> <br>
 
 <ul>
 <% for(int i = 0; i< lista.size(); i++) {
@@ -21,6 +50,6 @@ elenco di tutti i quiz dell'argomento <%=lista.get(0).getArgomento().getDescrizi
  } 
  %>
 </ul><br><br>
-
+</div>
 </body>
 </html>

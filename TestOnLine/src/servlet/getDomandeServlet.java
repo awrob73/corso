@@ -43,7 +43,6 @@ public class getDomandeServlet extends HttpServlet {
 			Quiz q = qsi.selectQuiz(id);
 			List<Domanda> listaDom = dsi.stampaDomandeQuiz(q);
 			String intc = request.getParameter("contatore");
-			System.out.println(intc);
 			int i = Integer.parseInt(intc);
 
 			if (i < listaDom.size()) {
